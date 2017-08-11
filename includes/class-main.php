@@ -244,7 +244,8 @@ class Main {
 	static function cookies_default_content_options() {
 
 		$defaults = array(
-			'input_button_text'     => 'I understand',
+			'input_button_text'     => 'OK',
+			'settings_button_text'	=> 'Settings',
 			'input_link_text'       => 'Read more',
 			'textarea_warning_text' => 'This website uses cookies. By using our website you accept our use of cookies.'
 		);

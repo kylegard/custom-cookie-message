@@ -38,6 +38,9 @@
 	max-width: 1170px;
 	margin: 0 auto;
 }
+#cookies-button-settings.cookies-button-ok{
+	margin-right: 20px;
+}
 
 @media (max-width: 1200px) {
 	.cookie-content {

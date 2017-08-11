@@ -193,6 +193,14 @@ class Admin {
 			'content_options_section'
 		);
 
+		add_settings_field(
+			'Input Settings Button Text',
+			__( 'Enter settings button text:', 'cookie-message' ),
+			[ $this, 'cookies_settings_button_text_callback' ],
+			'cookies_content_options',
+			'content_options_section'
+		);
+
 		register_setting(
 			'cookies_content_options',
 			'cookies_content_options',
@@ -335,6 +343,12 @@ class Admin {
 		$options = get_option( 'cookies_content_options' );
 
 		echo '<input type="text" id="input_button_text" name="cookies_content_options[input_button_text]" value="' . $options['input_button_text'] . '" />';
+	}
+
+	public function cookies_settings_button_text_callback() {
+		$options = get_option( 'cookies_content_options' );
+
+		echo '<input type="text" id="settings_button_text" name="cookies_content_options[settings_button_text]" value="' . $options['settings_button_text'] . '" />';
 	}
 
 	public function cookies_input_link_text_callback() {

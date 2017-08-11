@@ -47,7 +47,7 @@ $styling_options = get_option( 'cookies_styling_options' );
 
 	<?php } ?>
 
-	#cookies-button-ok.cookies-button-ok {
+	#cookies-button-ok.cookies-button-ok, #cookies-button-settings.cookies-button-ok {
 	<?php if(!empty( $styling_options['button_color_picker'] )){ ?> background-color: <?php echo $styling_options['button_color_picker'];?>;
 	<?php } ?><?php if(!empty( $styling_options['button_text_color_picker'] )){ ?> color: <?php echo $styling_options['button_text_color_picker'];?>;
 	<?php } ?><?php if(!empty( $styling_options['button_height_slider_amount'] )){ ?> padding-top: <?php echo $styling_options['button_height_slider_amount'];?>px;
@@ -69,6 +69,10 @@ $styling_options = get_option( 'cookies_styling_options' );
 				<a style="color: <?php echo $styling_options['link_color_picker']; ?>"
 				   href=" <?php echo $general_options['cookies_page_link']; ?>"><?php _e( $content_options['input_link_text'], 'cookie-message' ); ?></a>
 			</p>
+			<a id="cookies-button-settings"
+			   class="cookies-button-ok <?php echo( ! empty( $styling_options['add_button_class'] ) ? $styling_options['add_button_class'] : 'default-cookie-button-style' ); ?>">
+				<?php _e( $content_options['settings_button_text'], 'cookie-message' ); ?>
+			</a>
 			<a id="cookies-button-ok"
 			   class="cookies-button-ok <?php echo( ! empty( $styling_options['add_button_class'] ) ? $styling_options['add_button_class'] : 'default-cookie-button-style' ); ?>">
 				<?php _e( $content_options['input_button_text'], 'cookie-message' ); ?>
