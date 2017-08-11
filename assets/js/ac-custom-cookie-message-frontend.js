@@ -57,47 +57,42 @@ jQuery( document ).ready( function ( $ ) {
 		if ( fallback !== "fallback" ) {
 			$( '#custom-cookie-message-container' ).slideDown( slideAnimation, function () {
 				$( this ).find( '.form-control' ).focus();
-
-				setBodyMargin();
 			} );
 		}
 	}
 	else {
 		$( '#custom-cookie-message-container' ).slideDown( slideAnimation, function () {
 			$( this ).find( '.form-control' ).focus();
-
-			setBodyMargin();
 		} );
 	}
 
-	$( '#cookies-button-ok' ).click( function ( e ) {
-		e.preventDefault();
-		//var ajaxURL = window.location.protocol + "//" + window.location.host + '/wp-admin/admin-ajax.php';
-		$.ajax( {
-			//url : ajaxURL,
-			url: MyAjax.ajaxurl,
-			type: 'GET',
-			data: {
-				action: 'setcookie',
-			},
-		} )
-		 .done( function ( data ) {
-			 if ( storage ) {
-				 storage.setItem( "ac-cookie-fallback", "fallback" );
-			 }
+	// $( '#cookies-button-ok' ).click( function ( e ) {
+	// 	e.preventDefault();
+	// 	//var ajaxURL = window.location.protocol + "//" + window.location.host + '/wp-admin/admin-ajax.php';
+	// 	$.ajax( {
+	// 		//url : ajaxURL,
+	// 		url: MyAjax.ajaxurl,
+	// 		type: 'GET',
+	// 		data: {
+	// 			action: 'setcookie',
+	// 		},
+	// 	} )
+	// 	 .done( function ( data ) {
+	// 		 if ( storage ) {
+	// 			 storage.setItem( "ac-cookie-fallback", "fallback" );
+	// 		 }
+	//
+	// 		 $( '#custom-cookie-message-container' ).hide();
+	// 	 } )
+	// 	 .fail( function () {
+	// 	 } )
+	// 	 .always( function () {
+	// 	 } );
+	// } );
 
-			 $( '#custom-cookie-message-container' ).hide();
-		 } )
-		 .fail( function () {
-		 } )
-		 .always( function () {
-		 } );
-	} );
+	$('.container-cookies').on('click', '.cookies-button-ok', function(e){
+	e.preventDefault();
 
-	$( window ).on( 'resize', function () {
-
-		setBodyMargin();
-	} );
-
-
+	 	$('#cookies-settings').modal('show');
+	});
 } );

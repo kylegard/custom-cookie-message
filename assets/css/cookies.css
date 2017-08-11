@@ -11,6 +11,29 @@
 	width: 100%;
 }
 
+.container-cookies-down {
+	bottom: -100px !important;
+}
+.container-cookies-up {
+	top: -100px !important;
+}
+
+
+.container-cookies--top-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: top 0.2s ease-in-out;
+}
+
+.container-cookies--bottom-fixed {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: bottom 0.2s ease-in-out;
+}
 .cookie-content {
 	max-width: 1170px;
 	margin: 0 auto;
@@ -46,10 +69,6 @@
 	display: none;
 	height: auto;
 	padding: 10px 0 10px 0;
-}
-
-.admin-bar .top-static {
-	top: 32px;
 }
 
 .admin-bar .top-fixed {

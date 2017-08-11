@@ -8,6 +8,7 @@
 namespace CustomCookieMessage;
 
 use CustomCookieMessage\Forms\Admin;
+use CustomCookieMessage\Settings\Admin_Settings;
 
 /**
  * Custom Cookie Message.
@@ -120,6 +121,8 @@ class Main {
 
 	function display_frontend_notice() {
 		$this->get_template( 'cookie-notice.php' );
+		$this->get_template( 'modal.php' );
+
 	}
 
 	static function get_template( $template_name, $args = array(), $template_path = '', $default_path = '' ) {
@@ -145,7 +148,7 @@ class Main {
 		}
 
 		if ( ! $default_path ) {
-			$default_path = CUSTOM_COOKIE_MESSAGE_PLUGIN_PATH . '/views/';
+			$default_path = CUSTOM_COOKIE_MESSAGE_PLUGIN_PATH . '/templates/';
 		}
 
 		// Look within passed path within the theme - this is priority.

@@ -28,9 +28,9 @@ jQuery( function ( $ ) {
 	$.get( '/' )
 	 .done( function ( data, status, xhr ) {
 		 cookies = getCookies();
-
 		 console.log( cookies )
 	 } );
+
 
 
 	// Add Color Picker to all inputs that have 'color-field' class

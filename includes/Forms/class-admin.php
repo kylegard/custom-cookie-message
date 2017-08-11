@@ -31,6 +31,7 @@ class Admin {
 		return self::$instance;
 	}
 
+
 	public function register_backend_plugin_styles() {
 		wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
 		wp_register_style( 'cookie_style', CUSTOM_COOKIE_MESSAGE_PLUGIN_URL . '/assets/css/cookies.css' );
@@ -44,7 +45,7 @@ class Admin {
 			'jquery-ui-slider',
 			'wp-color-picker'
 		) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_js' ) );
+		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_js' ) );
 	}
 
 	public function cookies_options_display() {
@@ -317,7 +318,6 @@ class Admin {
 
 		$html = '<select id="location_options" name="cookies_general_options[location_options]">';
 		$html .= '<option value="top-fixed"' . selected( $options['location_options'], 'top-fixed', false ) . '>' . __( 'Top as overlay', 'cookie-message' ) . '</option>';
-		$html .= '<option value="top-static"' . selected( $options['location_options'], 'top-static', false ) . '>' . __( 'Top in content', 'cookie-message' ) . '</option>';
 		$html .= '<option value="bottom-fixed"' . selected( $options['location_options'], 'bottom-fixed', false ) . '>' . __( 'Bottom as overlay', 'cookie-message' ) . '</option>';
 		$html .= '</select>';
 
